@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dice Roller</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Dice Roller</h1>
+
+  <label>
+  How Many Dice:
+  <input type="number" id="diceCount" value="1" min="1">
+</label>
+
+<br><br>
+
+<label>
+  How Many Sides (d):
+  <input type="number" id="diceSides" value="6" min="2">
+</label>
+
+<br><br>
+<button id="rollBtn">Roll</button>
+
+<br><br>
+<label>
+  <input type="checkbox" id="rerollOnes">
+  Re-roll 1s
+</label>
+
+<br><br>
+
+
+<h2>Results</h2>
+<p id="rolls"></p>
+<p id="total"></p>
+<p id="duplicates"></p>
+
+<script src="script.js"></script>
+
+
+
+</body>
+</html>
