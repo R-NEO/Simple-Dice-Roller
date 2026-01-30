@@ -4,42 +4,63 @@
   <meta charset="UTF-8">
   <title>Dice Roller</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
 
   <h1>Dice Roller</h1>
 
   <label>
-  How Many Dice:
-  <input type="number" id="diceCount" value="1" min="1">
-</label>
+    How Many Dice:
+    <input type="number" id="diceCount" value="1" min="1">
+  </label>
 
-<br><br>
+  <br><br>
 
-<label>
-  How Many Sides (d):
-  <input type="number" id="diceSides" value="6" min="2">
-</label>
+  <label>
+    How Many Sides (d):
+    <input type="number" id="diceSides" value="6" min="2">
+  </label>
 
-<br><br>
-<button id="rollBtn">Roll</button>
+  <br><br>
 
-<br><br>
-<label>
-  <input type="checkbox" id="rerollOnes">
-  Re-roll 1s
-</label>
+  <!-- Re-roll 1s -->
+  <label id="rerollLabel" style="opacity:0.5;">
+    <input type="checkbox" id="rerollOnes">
+    Re-roll 1s
+  </label>
 
-<br><br>
+  <br><br>
+
+  <!-- Proficiency -->
+  <label id="proficiencyLabel" style="opacity:0.5;">
+    <input type="checkbox" id="useProficiency">
+    Add Proficiency
+  </label>
+  <input type="number" id="proficiencyValue" value="0" min="0" style="width:60px; text-align:center;" disabled>
+
+  <br><br>
+
+  <button id="rollBtn">Roll</button>
+
+  <br><br>
+
+  <h2>Results</h2>
+  <p id="rolls"></p>
+  <p id="total"></p>
+  <p id="totalWithProf"></p>
+  <p id="duplicates"></p>
+
+  <script src="script.js"></script>
 
 
-<h2>Results</h2>
-<p id="rolls"></p>
-<p id="total"></p>
-<p id="duplicates"></p>
-
-<script src="script.js"></script>
-
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('Service Worker registered'))
+      .catch(err => console.log('Service Worker failed', err));
+  }
+</script>
 
 
 </body>
